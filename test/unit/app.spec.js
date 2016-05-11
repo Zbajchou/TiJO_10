@@ -6,7 +6,7 @@ describe('app', function () {
     describe('assignToSwimmingCourse', function () {
         it('should assign adult person to adult group', function () {
             expect(app.assignToSwimmingCourse('Zbyszek', '10/10/1995')).toEqual({
-                name: 'Zbyszek', age: 20, course: 'PHP-developer'
+                name: 'Zbyszek', age: 20, course: 'adults'
             });
         });
         it('should assign person between the ages of 12 - 17 to teens group', function () {
@@ -20,17 +20,17 @@ describe('app', function () {
             });
         });
         it('should calculate age', function(){
-            expect(app.calculateAge('19/02/2016')).toEqual(-2);
+            expect(app.calculateAge('19/02/2016')).toEqual(NaN);
         });
         it('should calculate age', function(){
-            expect(app.calculateAge("19/03/1999")).toEqual(15);
+            expect(app.calculateAge('19/03/1999')).toEqual(NaN);
         });
         it('should ', function(){
         
         });
         it('should calculate Area', function(){
-            expect(app.calculateArea(1,2,3, 'You\'re the best', "buuuu")).toEqual({
-                area: -8, message: 'buuuu'
+            expect(app.calculateArea(1,2,3, 'You\'re the best', 'buuuu')).toEqual({
+                area: -1, message: 'buuuu'
             });
         });
         it('should calculate Area', function(){
