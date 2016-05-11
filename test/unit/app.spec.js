@@ -15,8 +15,18 @@ describe('app', function () {
             });
         });
         it('should assign person below 12 to kids group', function () {
-            expect(app.assignToSwimmingCourse('Zack', '10/06/2010')).toEqual({
+            expect(app.assignToSwimmingCourse('Zack', '10/06/2016')).toEqual({
                 name: 'Zack', age: 5, course: 'kids'
+            });
+        });
+
+        it('should calculate area', function () {
+            expect(app.calculateArea(1,2,3,0,"Error")).toEqual(false);
+        });
+
+        it('should calculate area', function () {
+            expect(app.calculateArea(1,2,3,"Success","Error")).toEqual({
+                area: -1, message: 'Error'
             });
         });
     });
